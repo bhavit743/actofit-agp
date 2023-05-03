@@ -1,0 +1,123 @@
+<div class="main">
+<h3>AGP Report</h3>
+<div class="top-section row">
+    <div class="card col" style="margin: 0px 0px 20px 20px">
+        <div class="card-head">
+            Goals for Type 1 and Type 2 Diabetes
+        </div>
+        <div class="card-body">
+            <div class="card-scale">
+
+            </div>
+            <div class="card-scale-values">
+
+            </div>
+        </div>
+    </div>
+    <div class="personal-details col">
+        <div class="card" style="padding: 25px;">
+            <div class="person-row" style="display: grid; grid-template-columns: 50% 50%;">
+                <p><b>{{userProfile.data.name}}</b></p>
+                <p>DOB: {{userProfile.data.date_of_birth}}</p>
+            </div>
+            <p>14 Days: </p>
+            <p style="margin-bottom: 0px;">Time CGM Active: </p>
+        </div>
+        <div class="card">
+            <div class="card-head">
+                Glucose Metrics
+            </div>
+            <div class="card-row">
+                <div class="card-row-head">
+                    <p class="head-text">Average Glucose</p>
+                    <p class="sub-text">Goal: &#60;154 mg/dL </p>
+                </div>
+                <div class="card-row-value">
+                        {{glucoseData.avgGlucose}} mg/dL
+                </div>
+            </div>
+            <div class="card-row">
+                <div class="card-row-head">
+                    <p class="head-text">Glucose Management Indicator (GMI)</p>
+                    <p class="sub-text">Goal: &#60;7% </p>
+                </div>
+                <div class="card-row-value">
+                        {{glucoseData.glucoseVariability}}%
+                </div>
+            </div>
+            <div class="card-row">
+                <div class="card-row-head">
+                    <p class="head-text">Average Glucose</p>
+                    <p class="sub-text">Defined as percent coefficient of variation <br> Goal: &#60;36% </p>
+                </div>
+                <div class="card-row-value">
+                        45.2%
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12" >
+      <div class="card ">
+        <div class="card-head">
+                Ambulatory Glucose Profile (AGP)
+        </div>
+        <div class="card-body ">
+            <p>AGP is a summary of glucose values from the report period, with median (50%) and other percentiles shown as if they occured in a single day.</p>
+            <div class="graph-area">
+                <p>Target Range</p>
+                <canvas id=chartHours width="330" height="120"></canvas>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card ">
+        <div class="card-head">
+                Daily Glucose Profiles
+        </div>
+        <div class="card-body">
+            <p>AGP is a summary of glucose values from the report period, with median (50%) and other percentiles shown as if they occured in a single day.</p>
+            <div class="row graph-row row-cols-7">
+                <div class="ind-graph col">
+                    <p>Wednesday</p>
+                    <canvas id=wedChart width="40" height="20"></canvas>
+                </div>
+                <div class="ind-graph col">
+                    <p>Thursday</p>
+                    <div class="ind-graph-date">8<span class="month">May</span></div>
+                    <canvas id=thurChart width="40" height="20"></canvas>
+                </div>
+                <div class="ind-graph col">
+                    <p>Friday</p>
+                    <canvas id=wedChart width="40" height="20"></canvas>
+                </div>
+                <div class="ind-graph col">
+                    <p>Saturday</p>
+                    <canvas id=wedChart width="40" height="20"></canvas>
+                </div>
+                <div class="ind-graph col">
+                    <p>Sunday</p>
+                    <canvas id=wedChart width="40" height="20"></canvas>
+                </div>
+                <div class="ind-graph col">
+                    <p>Monday</p>
+                    <canvas id=wedChart width="40" height="20"></canvas>
+                </div>
+                <div class="ind-graph col">
+                    <p>Tuesday</p>
+                    <canvas id=wedChart width="40" height="20"></canvas>
+                </div>
+                
+                
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
